@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        'header'
+        'content'
+        'footer';
+}
+
+.heading {
+    grid-area: header;
+}
+
+.game-container {
+    grid-area: content;
+    width: 50vw;
+    height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.square {
+    border: 1px solid black;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: overline;
+}
