@@ -1,3 +1,9 @@
+/* CREATE VARIABLES FOR THING THAT REPEAT TOO MUCH */
+:root {
+    --border-pattern: 5px solid #fff;
+}
+
+/* GLOBAL SETTINGS */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,42 +11,79 @@
     font-family: cursive;
 }
 
-body {
-    min-height: 100vh;
+/* BODY SETTINGS */
+.body {
     display: grid;
     justify-items: center;
     align-items: center;
     grid-template-areas:
-        'header'
-        'content'
-        'footer';
+        'heading'
+        'content';
+    background-color: #000;
+    color: #fff;
 }
 
+/* HEADING */
 .heading {
-    grid-area: header;
+    grid-area: heading;
+    height: 10vh;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
-.game-container {
-    grid-area: content;
-    width: 50vw;
-    height: 85vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-
-.square {
-    border: 1px solid black;
-}
-
-.footer {
-    grid-area: footer;
-}
-
-.footer a {
+.heading a {
+    color: #fff;
     text-decoration: none;
 }
 
-.footer a:hover {
+.heading a:hover {
     text-decoration: overline;
+}
+
+.heading i {
+    margin: 0 5px;
+}
+
+/* MAIN CONTENT */
+.game-container {
+    grid-area: content;
+    width: 55vw;
+    height: 90vh;
+    padding-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* MAIN CONTENT - OPTION BOX */
+.option-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 9rem;
+}
+
+.option-box:nth-child(2) {
+    border-left: var(--border-pattern);
+    border-right: var(--border-pattern);
+}
+
+.option-box:nth-child(4) {
+    border-bottom: var(--border-pattern);
+    border-top: var(--border-pattern);
+}
+
+.option-box:nth-child(5) {
+    border: var(--border-pattern);
+}
+
+.option-box:nth-child(6) {
+    border-bottom: var(--border-pattern);
+    border-top: var(--border-pattern);
+}
+
+.option-box:nth-child(8) {
+    border-right: var(--border-pattern);
+    border-left: var(--border-pattern);
 }
