@@ -1,6 +1,6 @@
 /* CREATE VARIABLES FOR THING THAT REPEAT TOO MUCH */
 :root {
-    --border-pattern: 2px solid #fff;
+    --border-pattern: 2px solid #ffffff54;
 }
 
 /* GLOBAL SETTINGS */
@@ -13,6 +13,7 @@
 
 /* BODY SETTINGS */
 .body {
+    height: 100vh;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -20,8 +21,7 @@
         'player1 heading player2'
         'player1 content player2'
         'player1 footer player2';
-    background-color: #000;
-    color: #fff;
+    background-color: #110f0ff3;
 }
 
 /* HEADING */
@@ -31,18 +31,18 @@
     height: 20vh;
     display: flex;
     align-items: flex-start;
-    padding-top: 1rem;
+    color: #ffffffc5;
 }
 
 /* PLAYERS */
 .player1 {
     grid-area: player1;
-    color: #a1ebff;
+    color: #7aefd8;
 }
 
 .player2 {
     grid-area: player2;
-    color: #ff9292;
+    color: #fd9b9b;
 }
 
 .players {
@@ -61,15 +61,19 @@
 }
 
 .players .score {
-    color: #fff200;
+    color: #fff42c;
     font-size: 2rem;
 }
 
 /* MAIN CONTENT */
 .game-container {
     grid-area: content;
-    width: 35vw;
+    width: 40vw;
+    min-width: 400px;
+    max-width: 600px;
     height: 60vh;
+    min-height: 400px;
+    max-height: 500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -83,8 +87,9 @@
     font-size: 6rem;
     cursor: pointer;
 }
-.option-box:hover{
-    background-color: #ffffff1b;
+
+.option-box:hover {
+    background-color: #ffffff08;
 }
 
 .option-box:nth-child(2) {
@@ -117,13 +122,12 @@
     height: 20vh;
     display: flex;
     align-items: flex-end;
-    padding-bottom: 1rem;
 }
 
 .footer a {
-    color: #fff;
+    color: #ffffffc5;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .footer a:hover {
@@ -131,5 +135,6 @@
 }
 
 .footer i {
-    margin: 0 5px;
+    margin: 0 8px;
+    font-size: 2rem;
 }
