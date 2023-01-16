@@ -1,6 +1,6 @@
 /* CREATE VARIABLES FOR THING THAT REPEAT TOO MUCH */
 :root {
-    --border-pattern: 5px solid #fff;
+    --border-pattern: 2px solid #fff;
 }
 
 /* GLOBAL SETTINGS */
@@ -17,8 +17,9 @@
     justify-items: center;
     align-items: center;
     grid-template-areas:
-        'heading'
-        'content';
+        'player1 heading player2'
+        'player1 content player2'
+        'player1 footer player2';
     background-color: #000;
     color: #fff;
 }
@@ -26,31 +27,49 @@
 /* HEADING */
 .heading {
     grid-area: heading;
-    height: 10vh;
-    font-size: 1.5rem;
+    font-size: 3rem;
+    height: 20vh;
     display: flex;
+    align-items: flex-start;
+    padding-top: 1rem;
+}
+
+/* PLAYERS */
+.player1 {
+    grid-area: player1;
+    color: #a1ebff;
+}
+
+.player2 {
+    grid-area: player2;
+    color: #ff9292;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
-.heading a {
-    color: #fff;
-    text-decoration: none;
+.players .fa-user {
+    font-size: 5rem;
 }
 
-.heading a:hover {
-    text-decoration: overline;
+.players .players-txt {
+    font-size: 1.5rem;
 }
 
-.heading i {
-    margin: 0 5px;
+.players .score {
+    color: #fff200;
+    font-size: 2rem;
 }
 
 /* MAIN CONTENT */
 .game-container {
     grid-area: content;
-    width: 55vw;
-    height: 90vh;
-    padding-bottom: 1.5rem;
+    width: 35vw;
+    height: 60vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -61,7 +80,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 9rem;
+    font-size: 6rem;
+    cursor: pointer;
+}
+.option-box:hover{
+    background-color: #ffffff1b;
 }
 
 .option-box:nth-child(2) {
@@ -86,4 +109,27 @@
 .option-box:nth-child(8) {
     border-right: var(--border-pattern);
     border-left: var(--border-pattern);
+}
+
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    height: 20vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.footer a:hover {
+    text-decoration: overline;
+}
+
+.footer i {
+    margin: 0 5px;
 }
