@@ -45,6 +45,9 @@ const Game = (() => {
         box.textContent = currentPlayer
     }
     function changePlayer() {
+        boxes.forEach(box => {
+            box.textContent === xPlayer.maker ? box.style.color = xPlayer.color : box.style.color = oPlayer.color
+        })
         currentPlayer === xPlayer.maker ? statusTxt.style.color = oPlayer.color : statusTxt.style.color = xPlayer.color
         currentPlayer = (currentPlayer === xPlayer.maker) ? oPlayer.maker : xPlayer.maker
         statusTxt.textContent = `${currentPlayer}'s turn`
