@@ -28,22 +28,24 @@ const Game = (() => {
         boxes.forEach(box => box.addEventListener('click', boxClicked))
         restartBtn.addEventListener('click', restartGame)
         statusTxt.style.color = xPlayer.color
-        statusTxt.textContent = `${currentPlayer}'s turn!`
+        statusTxt.textContent = `${currentPlayer}'s turn`
         running = true
     }
+
     function boxClicked() {
         const boxIndex = this.getAttribute('boxIndex')
         if (options[boxIndex] != "" || !running) {
             return
         }
         updateBox(this, boxIndex)
-        changePlayer()
         checkWinner()
     }
+
     function updateBox(box, index) {
         options[index] = currentPlayer
         box.textContent = currentPlayer
     }
+
     function changePlayer() {
         boxes.forEach(box => {
             box.textContent === xPlayer.maker ? box.style.color = xPlayer.color : box.style.color = oPlayer.color
@@ -52,9 +54,42 @@ const Game = (() => {
         currentPlayer = (currentPlayer === xPlayer.maker) ? oPlayer.maker : xPlayer.maker
         statusTxt.textContent = `${currentPlayer}'s turn`
     }
+
     function checkWinner() {
+        let roundWon = false
+        for (let i = 0; i < winConditions.length; i++) {
+            const condition = winConditions[i]
+            const cellA = options[condition[0]]
+            const cellB = options[condition[1]]
+            const cellC = options[condition[2]]
+
+            if (cellA == "" || cellB == "" || cellC == "") {
+                continue
+            }
+            if (cellA == cellB && cellB == cellC) {
+                roundWon = true
+                break
+            }
+        }
+        if (roundWon) {
+            statusTxt.textContent = `${currentPlayer} wins!`
+            running = false
+        }
+        else if (!options.includes("")) {
+            statusTxt.textContent = 'Draw!'
+            running = false
+        }
+        else {
+            changePlayer()
+        }
     }
+
     function restartGame() {
+        currentPlayer = xPlayer.maker
+        options = ["", "", "", "", "", "", "", "", ""]
+        statusTxt.textContent = `${currentPlayer}'s turn`
+        boxes.forEach(box => box.textContent = "")
+        running = true
     }
 
     return { startGame }

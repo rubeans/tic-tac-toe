@@ -56,7 +56,7 @@
 }
 
 .header .statusTxt {
-    font-size: 1.25rem;
+    font-size: 2rem;
 }
 
 /* PLAYERS */
@@ -75,6 +75,9 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+}
+.players .player-txt{
+    font-size: 1.5rem;
 }
 
 .players .fa-user {
