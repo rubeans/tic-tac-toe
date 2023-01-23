@@ -18,20 +18,45 @@
     justify-items: center;
     align-items: center;
     grid-template-areas:
-        'player1 heading player2'
+        'player1 header player2'
         'player1 content player2'
         'player1 footer player2';
     background-color: #110f0ff3;
 }
 
 /* HEADING */
-.heading {
-    grid-area: heading;
-    font-size: 3rem;
-    height: 20vh;
+.header {
+    grid-area: header;
+    height: 30vh;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     color: #ffffffc5;
+}
+
+.header .heading {
+    font-size: 3rem;
+}
+
+.header .restart-btn {
+    cursor: pointer;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    background-color: #ffffffc5;
+    color: #110f0ff3;
+}
+
+.header .restart-btn:hover {
+    background-color: #110f0ff3;
+    color: #ffffffc5;
+    box-shadow: 0 0 30px #ffffffc5;
+}
+
+.header .statusTxt {
+    font-size: 1.25rem;
 }
 
 /* PLAYERS */
@@ -49,20 +74,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .players .fa-user {
     font-size: 5rem;
 }
 
-.players .players-txt {
-    font-size: 1.5rem;
-}
-
 .players .score {
     color: #fff42c;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 /* MAIN CONTENT */
@@ -119,7 +140,7 @@
 /* FOOTER */
 .footer {
     grid-area: footer;
-    height: 20vh;
+    height: 10vh;
     display: flex;
     align-items: flex-end;
 }
@@ -127,7 +148,7 @@
 .footer a {
     color: #ffffffc5;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 .footer a:hover {
@@ -136,5 +157,5 @@
 
 .footer i {
     margin: 0 8px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
