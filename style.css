@@ -62,12 +62,12 @@
 /* PLAYERS */
 .player1 {
     grid-area: player1;
-    color: #7aefd8;
+    color: #ffffffc5;
 }
 
 .player2 {
     grid-area: player2;
-    color: #fd9b9b;
+    color: #ffffffc5;
 }
 
 .players {
@@ -76,17 +76,13 @@
     align-items: center;
     gap: 0.5rem;
 }
-.players .player-txt{
+
+.players .player-txt {
     font-size: 1.5rem;
 }
 
 .players .fa-user {
     font-size: 5rem;
-}
-
-.players .score {
-    color: #fff42c;
-    font-size: 1.5rem;
 }
 
 /* MAIN CONTENT */
@@ -110,6 +106,7 @@
     align-items: center;
     font-size: 6rem;
     cursor: pointer;
+    color: #ffffffc5;
 }
 
 .option-box:hover {
