@@ -89,5 +89,4 @@ const Game = (() => {
 
     return { startGame }
 })()
-
 Game.startGame()
